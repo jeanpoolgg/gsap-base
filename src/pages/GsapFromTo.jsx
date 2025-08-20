@@ -1,5 +1,25 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapFromTo = () => {
-  // TODO: Implement the gsap.fromTo() method
+  
+  useGSAP(() => {
+    // Desde un nuevo estado hacia otro nuevo estado
+    gsap.fromTo('#red-box', {
+      x: 100,  // posición del primer estado respecto a su origen natural
+      rotation: 0,
+      borderRadius: '0%'
+    },
+    {
+      x: 250, // posición del segundo estado respecto a su origen natural
+      repeat: -1,
+      yoyo: true, // regresa a la posición inicial del primer estado
+      borderRadius: '100%',
+      rotation: 360,
+      duration: 2,
+      ease: 'bounce.out'
+    })
+  }, []);
 
   return (
     <main>
