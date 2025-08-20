@@ -11,6 +11,11 @@ import {
   Home,
 } from "./pages";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP);
+
+
 const App = () => {
   return (
     <div className="bg-black min-h-screen w-full">
